@@ -46,7 +46,7 @@ public class SetMoneyCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (!this.plugin.isEnabled()) return false;
         if (!sender.hasPermission("economyapi.command.setmoney")) {
-            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này".");
+            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này.");
             return false;
         }
 
