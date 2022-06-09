@@ -31,7 +31,7 @@ public class TopMoneyCommand extends Command {
     private EconomyAPI plugin;
 
     public TopMoneyCommand(EconomyAPI plugin) {
-        super("topmoney", "Shows top money of this server", "/topmoney [page]", new String[]{"baltop", "balancetop"});
+        super("topmoney", "Danh sách người chơi có nhiều tiền nhất Server", "/topmoney [trang]", new String[]{"baltop", "balancetop"});
 
         this.plugin = plugin;
     }
@@ -55,7 +55,7 @@ public class TopMoneyCommand extends Command {
     public boolean execute(final CommandSender sender, String label, final String[] args) {
         if (!this.plugin.isEnabled()) return false;
         if (!sender.hasPermission("economyapi.command.topmoney")) {
-            sender.sendMessage(TextFormat.RED + "You don't have permission to use this command.");
+            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này.");
             return false;
         }
 
@@ -94,7 +94,7 @@ public class TopMoneyCommand extends Command {
                 sender.sendMessage(output.toString());
             });
         } catch (NumberFormatException e) {
-            sender.sendMessage(TextFormat.RED + "Please provide a number.");
+            sender.sendMessage(TextFormat.RED + "Vui lòng đưa một giá trị là số.");
         }
         return true;
     }

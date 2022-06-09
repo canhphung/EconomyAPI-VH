@@ -29,7 +29,7 @@ public class SetLangCommand extends Command {
     private EconomyAPI plugin;
 
     public SetLangCommand(EconomyAPI plugin) {
-        super("setlang", "Sets your preferred language", "/setlang <ccTLD>");
+        super("setlang", "Chỉnh ngôn ngữ bạn muốn dùng", "/setlang <ccTLD>");
 
         this.plugin = plugin;
 
@@ -44,12 +44,12 @@ public class SetLangCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (!this.plugin.isEnabled()) return false;
         if (!sender.hasPermission("economyapi.command.setlang")) {
-            sender.sendMessage(TextFormat.RED + "You don't have permission to use this command.");
+            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này.");
             return false;
         }
 
         if (args.length < 1) {
-            sender.sendMessage(TextFormat.RED + "Usage: " + this.getUsage());
+            sender.sendMessage(TextFormat.RED + "Sử dụng: " + this.getUsage());
             return true;
         }
         String lang = args[0];

@@ -30,7 +30,7 @@ public class SetMoneyCommand extends Command {
     private EconomyAPI plugin;
 
     public SetMoneyCommand(EconomyAPI plugin) {
-        super("setmoney", "Set player's balance", "/setmoney <player> <amount>", new String[]{"setbal", "setbalance"});
+        super("setmoney", "Chỉnh số tiền của một người chơi nào đó", "/setmoney <người chơi> <số lượng>", new String[]{"setbal", "setbalance"});
 
         this.plugin = plugin;
 
@@ -46,12 +46,12 @@ public class SetMoneyCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (!this.plugin.isEnabled()) return false;
         if (!sender.hasPermission("economyapi.command.setmoney")) {
-            sender.sendMessage(TextFormat.RED + "You don't have permission to use this command.");
+            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này".");
             return false;
         }
 
         if (args.length < 2) {
-            sender.sendMessage(TextFormat.RED + "Usage: " + this.getUsage());
+            sender.sendMessage(TextFormat.RED + "Sử dụng: " + this.getUsage());
             return true;
         }
         String player = args[0];

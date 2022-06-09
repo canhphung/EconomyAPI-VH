@@ -30,7 +30,7 @@ public class GiveMoneyCommand extends Command {
     private EconomyAPI plugin;
 
     public GiveMoneyCommand(EconomyAPI plugin) {
-        super("givemoney", "Gives money to player", "/givemoney <player> <amount>", new String[]{"deposit"});
+        super("givemoney", "Lấy tiền cho một người chơi nào đó", "/givemoney <Người chơi> <Số lượng>", new String[]{"deposit"});
 
         this.plugin = plugin;
 
@@ -46,12 +46,12 @@ public class GiveMoneyCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (!this.plugin.isEnabled()) return false;
         if (!sender.hasPermission("economyapi.command.givemoney")) {
-            sender.sendMessage(TextFormat.RED + "You don't have permission to use this command.");
+            sender.sendMessage(TextFormat.RED + "Bạn không có quyền để sử dụng lệnh này.");
             return false;
         }
 
         if (args.length < 2) {
-            sender.sendMessage(TextFormat.RED + "Usage: " + this.getUsage());
+            sender.sendMessage(TextFormat.RED + "Sử dụng: " + this.getUsage());
             return true;
         }
         String player = args[0];
